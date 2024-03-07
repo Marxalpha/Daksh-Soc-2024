@@ -56,7 +56,9 @@ const SlideShow = () => {
   }));
   const handleClick = () => {
     axios
-      .post("http://localhost:3000/game/addVault", { userId: userId })
+      .post("http://localhost:3000/game/addVault", {
+        userId: userId,
+      })
       .then((res) => {
         console.log(res);
       })

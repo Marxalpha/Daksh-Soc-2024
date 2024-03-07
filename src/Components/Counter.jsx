@@ -10,7 +10,7 @@ export const Counter = ({ minutes, seconds, onComplete }) => {
     }
     return (
       <div className="countdown11">
-        Time: {minutes}:{seconds} IST
+        Time: {minutes}:{seconds} MM:SS
       </div>
     );
   };

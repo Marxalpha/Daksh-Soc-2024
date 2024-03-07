@@ -8,7 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,13 +16,15 @@ const Signup = () => {
       username,
       email,
       password,
-    }).then(response => {
-        if(response.data.status) {
-            navigate('/login')
-        }
-    }).catch(err => {
-        console.log(err)
     })
+      .then((response) => {
+        if (response.data.status) {
+          navigate("/login");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="sign-up-container">
@@ -51,7 +53,9 @@ const Signup = () => {
         />
 
         <button type="submit">Sign Up</button>
-        <p>Have an Account? <Link to="/login">Login</Link></p> 
+        <p>
+          Have an Account? <Link to="/login">Login</Link>
+        </p>
       </form>
     </div>
   );

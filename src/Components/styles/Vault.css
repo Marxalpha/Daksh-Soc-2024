@@ -77,6 +77,11 @@
     }
 }
 
+.rot-col-error {
+    background-color: #e62f2f;
+
+}
+
 .rot-col {
     background-color: #22e62f;
 }

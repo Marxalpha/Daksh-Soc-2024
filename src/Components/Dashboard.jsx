@@ -25,7 +25,6 @@ const Dashboard = () => {
   const handleTimeSet = (minutes, seconds) => {
     setSeconds(seconds);
     setMinutes(minutes);
-    // console.log("Im in handleTimeSet", seconds, minutes);
     setStartCountdown(true);
   };
 
@@ -79,7 +78,6 @@ const Dashboard = () => {
       .objectAltitude("alt")
       .objectLabel("name");
 
-    // custom globe material
     const globeMaterial = world.globeMaterial();
     globeMaterial.bumpScale = 25;
     new THREE.TextureLoader().load(
