@@ -64,7 +64,8 @@ const Adminpage = () => {
   return (
     <div style={{ position: "relative" }}>
       <canvas id="canv" ref={canvasRef} />
-      <form id="login-form"
+      <form
+        id="login-form"
         style={{
           position: "absolute",
           top: "50%",

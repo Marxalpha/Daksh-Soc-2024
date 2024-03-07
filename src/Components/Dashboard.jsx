@@ -10,12 +10,30 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import "./styles/AnimatedButton.css";
+import { Counter } from "./Counter";
 axios.defaults.withCredentials = true;
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [pswd, setPswd] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const [startCountdown, setStartCountdown] = useState(false);
+
+  const handleTimeSet = (minutes, seconds) => {
+    setSeconds(seconds);
+    setMinutes(minutes);
+    // console.log("Im in handleTimeSet", seconds, minutes);
+    setStartCountdown(true);
+  };
+
+  const handleCountdownComplete = () => {
+    setStartCountdown(false);
+    setMinutes(0);
+    setSeconds(0);
+  };
 
   useEffect(() => {
     const id = searchParams.get("id");
@@ -155,6 +173,15 @@ const Dashboard = () => {
         color={true}
         onChange={handleKnobChange}
       />
+      {startCountdown ? (
+        <Counter
+          minutes={minutes}
+          seconds={seconds}
+          onComplete={handleCountdownComplete}
+        />
+      ) : (
+        `Time: 0:0 IST`
+      )}
       <input type="text" value={knobValue} id="knob--input" /> <Header />
       <HintPanel />
       <XssPanel />
@@ -166,7 +193,7 @@ const Dashboard = () => {
         id="hidden--img"
       />
       <Clock />
-      <Footer pswd={pswd} />
+      <Footer onTimeSet={handleTimeSet} />
     </div>
   );
 };

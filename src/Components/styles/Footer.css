@@ -1,21 +1,8 @@
-.terminal-btn {
-    width: 30px;
-    height: 30px;
-    margin:0px 10px;
-    background-color: transparent;
-}
-
-.terminal-btn:hover {
-    background-color: chartreuse; 
-    transform: scale(1.1);
-    transition: all 0.3s ease; 
-}
-
 .tabFooter {
     display: flex;
     position: fixed;
     bottom: 0px;
-
+    padding-top: 6px;
     height: 5vh;
     min-height: 25px;
     width: 100%;
@@ -28,7 +15,8 @@
     transform: translateY(0px);
 
 }
-.Footer-Text{
-    font-size:large;
+
+.Footer-Text {
+    font-size: large;
     font-weight: 600;
 }

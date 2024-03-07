@@ -57,8 +57,8 @@ export const XssPanel = () => {
         className="xss-text"
         placeholder="Type Somthing here"
       />
-      <button className="dos">Dont</button>
-      <button className="send">Send</button>
+      <button className="AnimatedButton dos">Dont</button>
+      <button className="AnimatedButton send">Send</button>
     </div>
   );
 };
