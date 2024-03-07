@@ -25,6 +25,7 @@ const Vault = ({ id, username }) => {
         setCurrentNum("");
         navigate("/slideshow", { state: { pic: res.data.pic, userId: id } });
       } else {
+        setRotate(true);
         window.alert("Pin incorrect try again");
         setCurrentNum("");
       }
@@ -40,7 +41,7 @@ const Vault = ({ id, username }) => {
         />
 
         <div className="numbers">
-          {[1, 2, 3, 4, 5, 6].map((number) => (
+          {[0, 2, 7, 4, 5, 6].map((number) => (
             <button
               className="vault-btn"
               key={number}
@@ -51,10 +52,13 @@ const Vault = ({ id, username }) => {
           ))}
           <img
             id="vault-wheel"
-            className={rotate ? "rotate" : ""}
+            className={rotate ? "rotate " : ""}
             src="https://assets-global.website-files.com/65e752ee0e953e84ab88b904/65e752ee0e953e84ab88b94b_safe%20handle.png"
             alt=""
           />
+          <div
+            className={rotate ? "rot-col smcircle" : "nom-col smcircle"}
+          ></div>
         </div>
         <h3 id="something">{username}</h3>
       </div>

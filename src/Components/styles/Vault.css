@@ -1,6 +1,10 @@
 .vault-container {
     position: relative;
     width: 300px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
 }
 
 #something {
@@ -61,4 +65,33 @@
     to {
         transform: rotate(60deg);
     }
+}
+
+@keyframes rotate-bak {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.rot-col {
+    background-color: #22e62f;
+}
+
+.nom-col {
+    background-color: #2b414f;
+
+}
+
+.smcircle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* background-color: aqua; */
+    left: 51px;
+    top: 65px;
 }
